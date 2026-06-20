@@ -22,3 +22,6 @@ for symbol in operations_dict:
     print(symbol)
 op_symbol = input("Pick an operation from the above symbols:")
 number2 = int(input("Enter Second number:"))
+
+calculator_function = operations_dict[op_symbol]
+calculator_function(number1, number2)
