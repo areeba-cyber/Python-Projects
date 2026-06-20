@@ -16,3 +16,5 @@ operations_dict = {
     "*" : multiply,
     "/" : divide
 }
+
+number1 = int(input("Enter First number:"))
