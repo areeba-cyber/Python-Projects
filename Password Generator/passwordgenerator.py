@@ -5,3 +5,4 @@ numbers = ['0','1','2','3','4','5','6','7','8','9']
 symbols =['!','@','#','$','%','^','&','*','(',')','-','=','+']
 
 print("Welcome to Password Generator !")
+num_of_letters = int(input("How many letters would you like in your password ?\n"))
