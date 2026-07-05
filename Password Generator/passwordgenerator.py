@@ -26,3 +26,9 @@ for i in range(1, num_of_numbers+1):
 print(password)
 random.shuffle(password)
 print(password)
+
+# To convert password in string
+str_password = ""
+for char in password:
+    str_password += char
+print(str_password)
