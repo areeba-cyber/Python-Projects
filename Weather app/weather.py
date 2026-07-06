@@ -12,3 +12,6 @@ if data["cod"] == 200:
     temperature = data["main"]["temp"]
     humidity = data["main"]["humidity"]
     weather = data["weather"][0]["description"]
+
+    print(f"\n Weather in {city_name}")
+    print(f"Temperature: {temperature}°C")
