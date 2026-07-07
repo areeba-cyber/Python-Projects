@@ -12,4 +12,11 @@ while True:
         expense_name  = input("Add your expense :")
         expense_amount = float(input("Add expense amount :"))
 
+        expense = {
+            expense_name : "expense_name",
+            expense_amount: "expense_amount"
+        }
+
+        
+
 
