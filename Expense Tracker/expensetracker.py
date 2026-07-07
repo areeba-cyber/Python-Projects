@@ -8,5 +8,8 @@ while True:
     print("4. End")
 
     choice = input("Enter your choice :")
-    
+    if(choice == 1):
+        expense_name  = input("Add your expense :")
+        expense_amount = float(input("Add expense amount :"))
+
 
