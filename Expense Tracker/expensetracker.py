@@ -23,5 +23,11 @@ while True:
     elif choice == "2":
         print("\n These are the expenses :")
 
+        if len(expenses) == 0:
+            print("There is no expense in the list")
+        else :
+            for expense in expenses:
+                print(f"{expense[expense_name]} - Rs{expense[expense_amount]}")
+
 
 
