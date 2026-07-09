@@ -21,3 +21,7 @@ if not os.path.exists(folder_path):
 for file in os.listdir(folder_path):
 
     file_path = os.path.join(folder_path, file)
+
+    # Ignore folders
+    if os.path.isdir(file_path):
+        continue
