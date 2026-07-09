@@ -13,3 +13,7 @@ file_types = {
     "Python Files": [".py"],
     "Others": []
 }
+# Check if folder exists
+if not os.path.exists(folder_path):
+    print("Folder does not exist!")
+    exit()
