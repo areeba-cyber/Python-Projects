@@ -17,3 +17,7 @@ file_types = {
 if not os.path.exists(folder_path):
     print("Folder does not exist!")
     exit()
+# Organize files
+for file in os.listdir(folder_path):
+
+    file_path = os.path.join(folder_path, file)
