@@ -5,4 +5,4 @@ with open('home.html', 'r') as html_file:
 
    soup = BeautifulSoup(content, 'lxml')
    # tags = soup.find('h5')
-   tags = soup.find_all('h5')
+   courses_html_tags = soup.find_all('h5')
