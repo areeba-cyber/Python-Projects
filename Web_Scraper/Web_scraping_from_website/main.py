@@ -1,4 +1,4 @@
 from bs4 import BeautifulSoup
 import requests
 
-html_text = requests.get('https://www.timesjob.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=')
+html_text = requests.get('https://www.timesjob.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=').text
