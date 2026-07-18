@@ -6,3 +6,9 @@ soup = BeautifulSoup(html_text, 'lxml')
 job = soup.find('li', class_= 'clearfix job-bx wht-shd-bx')
 company_name = job.find('h3', class_= 'joblist-comp-name').text.replace(' ','')
 skills = job.find('span', class_= 'srp-skills').text.replace(' ','')
+published_date = job.find('span', class_= 'sim-posted')
+
+print(f'''
+Company Name = {company_name}
+Required Skills = {skills}      
+''')
