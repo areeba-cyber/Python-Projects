@@ -13,6 +13,7 @@ for job in jobs:
      skills = job.find('span', class_= 'srp-skills').text.replace(' ','')
      
  
+ 
      print(f''' 
      Company Name = {company_name}
      Required Skills = {skills}

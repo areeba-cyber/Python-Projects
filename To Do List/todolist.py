@@ -14,6 +14,7 @@ while True:
 
     choice = input("Enter your choice (1-4): ")
 
+
     if choice == "1":
         task = input("Enter a new task: ")
         tasks.append(task)

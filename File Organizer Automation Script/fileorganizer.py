@@ -45,6 +45,7 @@ for file in os.listdir(folder_path):
             moved = True
             break
 
+
     if not moved:
         destination = os.path.join(folder_path, "Others")
         os.makedirs(destination, exist_ok=True)

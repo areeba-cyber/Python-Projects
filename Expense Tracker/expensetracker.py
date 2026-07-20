@@ -36,6 +36,7 @@ while True:
         for expense in expenses:
              total += expense["expense_amount"]
              print(f"\nTotal Expense = Rs {total}")
+             
 
     elif choice == "4":
         print("Thank you!")
