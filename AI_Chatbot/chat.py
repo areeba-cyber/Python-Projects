@@ -12,3 +12,5 @@ response = client.chat.completions.create(
          {"role": "user", "content":"What is the weather like today?"}
      ]
 )
+
+print(response)
