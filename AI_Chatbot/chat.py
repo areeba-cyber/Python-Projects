@@ -13,4 +13,5 @@ response = client.chat.completions.create(
      ]
 )
 
+
 print(response)
