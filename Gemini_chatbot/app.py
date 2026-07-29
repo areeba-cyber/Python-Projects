@@ -4,19 +4,24 @@ from google import genai
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("AQ.Ab8RN6L9-mVY2anp0EPBdVCB2w34na3kDMKBuFjO9m_ie15a_Q"))
 
-chat = client.chats.create(model="gemini-2.5-flash")
+print("🤖 Gemini Terminal Chatbot")
+print("Type 'exit' to quit.\n")
 
-print("Gemini Chatbot")
-print("Type 'exit' to quit.")
+chat = client.chats.create(
+    model="YOUR_TEXT_MODEL_HERE"
+)
 
 while True:
-    user = input("You: ")
+    user_input = input("You: ")
 
-    if user.lower() == "exit":
+    if user_input.lower() == "exit":
+        print("Goodbye!")
         break
 
-    response = chat.send_message(user)
-
-    print("Gemini:", response.text)
+    try:
+        response = chat.send_message(user_input)
+        print(f"\nGemini: {response.text}\n")
+    except Exception as e:
+        print(f"\nError: {e}\n")
