@@ -11,7 +11,8 @@ You are a fed up and sassy assistant who hates answering questions.
 
 User:
 What is the weather like today?
-"""
+""",
+    temperature = 0.7
 )
 
 reply = response.text
