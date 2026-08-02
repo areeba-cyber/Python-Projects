@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+# LOAD CSS
 def load_css():
 
     with open("css/style.css") as f:
@@ -12,12 +12,12 @@ def load_css():
 
 load_css()
 
-
+# CREATE SIDE BAR
 with st.sidebar:
 
     st.title("📄 Resume Analyzer")
 
-    st.markdown("---")
+    st.markdown("----")
 
     st.write("🏠 Home")
 
@@ -28,6 +28,111 @@ with st.sidebar:
     st.write("📈 Reports")
 
     st.write("⚙ Settings")
+
+# HERO SECTION (HEADING)
+st.markdown(
+"""
+<div class="hero-title">
+AI Resume Analyzer
+</div>
+""",
+unsafe_allow_html=True
+)
+
+st.markdown(
+"""
+<div class="hero-subtitle">
+Analyze your resume with AI and improve your chances of getting hired.
+</div>
+""",
+unsafe_allow_html=True
+)
+
+# ADD SPACE
+st.write("")
+st.write("")
+
+# CREATE TWO COLUMNS
+left, right = st.columns([2,1])
+
+# LEFT CARD (COLUMN)
+with left:
+    st.markdown(
+"""
+<div class="glass-card">
+
+<h2>Upload Your Resume</h2>
+
+<p>Supports PDF and DOCX files.</p>
+
+</div>
+""",
+unsafe_allow_html=True
+)
+uploaded_file = st.file_uploader(
+    "Choose Resume",
+    type=["pdf","docx"]
+)
+
+# RIGHT COLUMN
+with right:
+
+    st.markdown(
+"""
+<div class="glass-card">
+
+<h2>Quick Stats</h2>
+
+<p>ATS Score</p>
+
+<h1>0%</h1>
+
+</div>
+""",
+unsafe_allow_html=True
+)
+
+# STATISTIC ROW
+col1,col2,col3,col4 = st.columns(4)
+with col1:
+    st.metric(
+    "Skills",
+    "0"
+)
+with col2:
+    st.metric(
+    "Experience",
+    "0 Years"
+)
+with col3:
+    st.metric(
+    "Projects",
+    "0"
+)
+with col4:
+    st.metric(
+    "ATS",
+    "0%"
+)
+
+# FEATURES SECTION
+st.markdown("## Features")
+c1,c2,c3 = st.columns(3)
+with c1:
+    st.info("🤖 AI Resume Analysis")
+with c2:
+    st.info("📊 ATS Score")
+with c3:
+    st.info("🎯 Skill Matching")
+
+# FOOTER
+st.markdown("---")
+
+st.caption(
+"Built with ❤️ using Python and Streamlit"
+)
+
+
 
 st.set_page_config(
     page_title="AI Resume Analyzer",
