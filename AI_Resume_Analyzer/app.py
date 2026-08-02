@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.parser import extract_resume_text
 
 # LOAD CSS
 def load_css():
@@ -71,9 +72,33 @@ unsafe_allow_html=True
 )
 uploaded_file = st.file_uploader(
     "Choose Resume",
-    type=["pdf","docx"]
+    type=["pdf", "docx"]
 )
 
+resume_text = ""
+
+if uploaded_file is not None:
+    st.success("Resume uploaded successfully!")
+    st.write("### File Details")
+
+    st.write("Filename:", uploaded_file.name)
+    st.write("File Type:", uploaded_file.type)
+    st.write("File Size:", uploaded_file.size, "bytes")
+
+    # Extract text only after a file is uploaded
+    resume_text = extract_resume_text(uploaded_file)
+
+    if resume_text:
+        st.divider()
+        st.subheader("Extracted Resume Text")
+
+        st.text_area(
+            "Resume",
+            resume_text,
+            height=400
+        )
+    else:
+        st.error("Unable to read this file.")
 # RIGHT COLUMN
 with right:
 
