@@ -1,3 +1,8 @@
+from utils.parser import ( 
+    extract_resume_text, 
+    extract_name,
+    extract_email
+    )
 import streamlit as st
 from utils.parser import extract_resume_text
 
@@ -87,8 +92,12 @@ if uploaded_file is not None:
 
     # Extract text only after a file is uploaded
     resume_text = extract_resume_text(uploaded_file)
-
+    name = extract_name(resume_text)
+    email = extract_email(resume_text)
     if resume_text:
+        st.subheader("Candidate Information")
+        st.write("👤 Name:", name)
+        st.write("📧 Email:", email)
         st.divider()
         st.subheader("Extracted Resume Text")
 
