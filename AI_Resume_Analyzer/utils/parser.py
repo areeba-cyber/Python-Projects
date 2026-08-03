@@ -84,3 +84,12 @@ def extract_email(text):
     if match: 
         return match.group() 
     return "Email not found"
+
+# Create the Phone Extraction Function
+def extract_phone(text): 
+    pattern = r"(?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{2,5}\)?[-.\s]?)?\d{3,5}[-.\s]?\d{3,5}" 
+    match = re.search(pattern, text) 
+    if match: 
+        phone = match.group().strip() 
+        return phone 
+    return "Phone number not found"
