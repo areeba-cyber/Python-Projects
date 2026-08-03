@@ -1,3 +1,4 @@
+from utils.skills import load_skills, extract_skills
 from utils.parser import ( 
     extract_resume_text, 
     extract_name,
@@ -6,6 +7,8 @@ from utils.parser import (
     )
 import streamlit as st
 from utils.parser import extract_resume_text
+
+# skills = load_skills()
 
 # LOAD CSS
 def load_css():
@@ -54,7 +57,6 @@ Analyze your resume with AI and improve your chances of getting hired.
 """,
 unsafe_allow_html=True
 )
-
 # ADD SPACE
 st.write("")
 st.write("")
@@ -93,6 +95,7 @@ if uploaded_file is not None:
 
     # Extract text only after a file is uploaded
     resume_text = extract_resume_text(uploaded_file)
+    skills = extract_skills(resume_text)
     name = extract_name(resume_text)
     email = extract_email(resume_text)
     phone = extract_phone(resume_text)
@@ -101,7 +104,9 @@ if uploaded_file is not None:
         st.write("👤 Name:", name)
         st.write("📧 Email:", email)
         st.write("📱 Phone:", phone)
-        st.divider()
+        # st.divider()
+        # st.subheader("Skills Extraction Test")
+        # st.write(skills)
         st.subheader("Extracted Resume Text")
 
         st.text_area(
