@@ -49,4 +49,7 @@ def extract_skills(resume_text):
     clean_resume = clean_resume.lower()
     clean_resume = " ".join(clean_resume.split())
     matched_skills = []
+    for skill in skills_database:
+      clean_skill = skill.strip()
+      clean_skill_lower = clean_skill.lower()
     return matched_skills
