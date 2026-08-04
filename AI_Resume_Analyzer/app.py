@@ -8,7 +8,7 @@ from utils.parser import (
 import streamlit as st
 from utils.parser import extract_resume_text
 
-# skills = load_skills()
+skills = load_skills()
 
 # LOAD CSS
 def load_css():
@@ -104,8 +104,13 @@ if uploaded_file is not None:
         st.write("👤 Name:", name)
         st.write("📧 Email:", email)
         st.write("📱 Phone:", phone)
-        # st.divider()
-        # st.subheader("Skills Extraction Test")
+        st.divider()
+        st.subheader("🛠️ Extracted Skills")
+        # st.write("Total Skills Found:", len(skills))
+        st.metric( 
+            label="Total Skills Found", 
+            value=len(skills) 
+            )
         # st.write(skills)
         st.subheader("Extracted Resume Text")
 

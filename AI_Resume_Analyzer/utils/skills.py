@@ -52,4 +52,8 @@ def extract_skills(resume_text):
     for skill in skills_database:
       clean_skill = skill.strip()
       clean_skill_lower = clean_skill.lower()
+      if clean_skill_lower in clean_resume:
+          matched_skills.append(skill)
+    matched_skills = list(set(matched_skills))
+    matched_skills = sorted(matched_skills)
     return matched_skills
