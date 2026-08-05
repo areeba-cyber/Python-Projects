@@ -96,6 +96,7 @@ if uploaded_file is not None:
     # Extract text only after a file is uploaded
     resume_text = extract_resume_text(uploaded_file)
     skills = extract_skills(resume_text)
+    # skills = []
     name = extract_name(resume_text)
     email = extract_email(resume_text)
     phone = extract_phone(resume_text)
@@ -112,6 +113,28 @@ if uploaded_file is not None:
             value=len(skills) 
             )
         st.write(skills)
+        if skills:
+            st.success(f"{len(skills)} technical skills detected successfully!")
+            st.markdown( 
+                """ <style> 
+                .skill-badge{
+                background-color:#DCFCE7; 
+                color:#15803D;
+                padding:8px 16px;
+                margin:6px;
+                border-radius:20px;
+                font-size:14px;
+                font-weight:600;
+                font-family:'Segoe UI', Arial, sans-serif;
+                display:inline-block; 
+                white-space:nowrap;
+                }
+                </style> """, 
+                unsafe_allow_html=True
+            )
+        else: 
+            st.warning( "No technical skills were detected. " 
+                        "Try uploading a resume with selectable text or update your skills database." )
         st.subheader("Extracted Resume Text")
 
         st.text_area(
