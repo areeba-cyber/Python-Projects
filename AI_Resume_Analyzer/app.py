@@ -111,7 +111,7 @@ if uploaded_file is not None:
             label="Total Skills Found", 
             value=len(skills) 
             )
-        # st.write(skills)
+        st.write(skills)
         st.subheader("Extracted Resume Text")
 
         st.text_area(
